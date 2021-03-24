@@ -11,7 +11,7 @@ class Command(BaseCommand):
         currs_info = get_updates()
         for curr in currs_info:
             Currency.objects.update_or_create(
-                name=curr['Name'], defaults={'rate': curr['Value'] / 10}
+                name=curr['Name'], defaults={'rate': curr['Value'] / int(curr['Nominal'])}
             )
         self.stdout.write(self.style.SUCCESS(
             'Currency instances has been successfully updated.'
