@@ -7,3 +7,4 @@ class Currency(models.Model):
 
     class Meta:
         db_table = 'currency'
+        verbose_name_plural = 'Currencies'
